@@ -24,9 +24,9 @@ Find me [here](https://vmah1ndra.github.io).
   <ul>
     {% for post in tag[1] %}
     {% assign url_parts = post.url | slice: 0, 26 %}
-    {% assign new_url = url_parts | join: "/coldcaches" %}
+    {% capture new_url %}https://vmah1ndra.github.io/coldcaches/{{ url_parts }}{% endcapture %}
     <li>
-      <a href="{{ new_url }}">{{ post.title }} {{ url_parts[0] }} {{ url_parts[1] }}</a>
+      <a href="{{ new_url }}">{{ post.title }} {{ url_parts }} {{ new_url }}</a>
     </li>
     {% endfor %}
   </ul>
